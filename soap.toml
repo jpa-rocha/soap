@@ -1,0 +1,9 @@
+[logger]
+level = "DEBUG"
+
+[settings]
+mtu = 1320
+address = "vpn.wobcom.de"
+
+[secrets]
+path = "secrets.yaml"
