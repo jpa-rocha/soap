@@ -5,6 +5,7 @@ import (
 	"context"
 	"fmt"
 
+	"soap/cmd/call"
 	config "soap/internal/config"
 	logger "soap/internal/logger"
 
@@ -23,6 +24,8 @@ func RootCmd() *cobra.Command {
 	}
 	cmd.SetContext(ctx)
 	ctx, cancel := context.WithTimeout(cmd.Context(), config.HTTPTimeout)
+
+	cmd.AddCommand(call.Cmd())
 
 	defer cancel()
 
